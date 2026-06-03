@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100">
+  <rect width="360" height="100" rx="24" fill="#ffffff" />
+  <g transform="translate(28, 18)">
+    <circle cx="40" cy="40" r="34" fill="none" stroke="#dc2626" stroke-width="6" />
+    <path d="M24 26 L40 62 L56 26 Z" fill="#dc2626" />
+    <path d="M44 24 L44 62" stroke="#dc2626" stroke-width="8" />
+  </g>
+  <text x="116" y="64" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#dc2626">MEDHA</text>
+</svg>

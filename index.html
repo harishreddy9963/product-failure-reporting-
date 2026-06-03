@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medha product failure/fault reporting</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header>
+      <div class="brand-banner">
+        <div class="logo-wrapper">
+          <img src="medha-logo.svg" alt="Medha logo" class="header-logo" />
+        </div>
+      </div>
+      <div class="header-copy">
+        <h1>Reporting of failures MEI/MAC</h1>
+        <p>Please submit the failure details of MEI-633/634 and MAC-180/181</p>
+      </div>
+    </header>
+
+    <button id="admin-menu-button" class="admin-button" aria-label="Admin menu">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </button>
+
+    <main>
+      <form id="report-form" class="card">
+        <h2>Report a Fault</h2>
+
+        <div class="grid-group">
+          <label>Reporting Person Name<span>*</span>
+            <input type="text" name="reportingName" required />
+          </label>
+          <label>Designation
+            <input type="text" name="designation" placeholder="Station Master, Technician, Inspector..." />
+          </label>
+        </div>
+
+        <div class="grid-group">
+          <label>Contact Number
+            <input type="tel" name="contactNumber" placeholder="+91 98765 43210" />
+          </label>
+          <label>Email
+            <input type="email" name="email" placeholder="name@example.com" />
+          </label>
+        </div>
+
+        <div class="grid-group">
+          <label>Zone<span>*</span>
+            <select id="zone" name="zone" required>
+              <option value="">Select Zone</option>
+            </select>
+          </label>
+          <label>Division
+            <select id="division" name="division">
+              <option value="">Select Division</option>
+            </select>
+          </label>
+        </div>
+
+        <label>Station<span>*</span>
+          <select id="station" name="station" required>
+            <option value="">Select Station</option>
+          </select>
+        </label>
+
+        <div class="grid-group">
+          <label>Type of Fault
+            <select name="faultType">
+              <option value="">Select Fault Type</option>
+              <option value="Track">Track</option>
+              <option value="Signaling">Signaling</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Rolling Stock">Rolling Stock</option>
+              <option value="Communication">Communication</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label>Fault Severity
+            <select name="severity">
+              <option value="">Select Severity</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </label>
+        </div>
+
+        <label>Fault Description<span>*</span>
+          <textarea name="description" rows="5" required placeholder="Describe the fault in detail..."></textarea>
+        </label>
+
+        <div class="grid-group">
+          <label>Date of Report
+            <input type="date" name="reportDate" />
+          </label>
+          <label>Additional Comments
+            <textarea name="additionalComments" rows="3" placeholder="Additional notes..."></textarea>
+          </label>
+        </div>
+
+        <button type="submit">Submit Report</button>
+        <div id="message" class="message"></div>
+      </form>
+    </main>
+  </div>
+
+  <div id="admin-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button id="admin-modal-close" class="modal-close" aria-label="Close">&times;</button>
+      <h3>Admin Login</h3>
+      <form id="admin-inline-form">
+        <label>User ID
+          <input type="text" name="adminUser" required />
+        </label>
+        <label>Password
+          <input type="password" name="adminPass" required />
+        </label>
+        <div class="form-actions">
+          <button type="submit">Login</button>
+        </div>
+        <p class="hint">Default: <strong>ADMIN</strong> / <strong>Medha9167</strong></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
